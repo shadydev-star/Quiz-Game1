@@ -471,7 +471,10 @@ const startQuiz = () => {
   
   // Start the quiz
   getAnswers();
+
 };
+
+
 
 // Save quiz state to localStorage
 const saveState = () => {
@@ -504,7 +507,7 @@ const getAnswers = () => {
   answerInput[3].nextElementSibling.innerText = data.d;
 };
 
-const submitQuiz = () => {
+let submitQuiz = () => {
   const data = questions[index];
   const ans = matchAns();
 
@@ -525,6 +528,11 @@ const submitQuiz = () => {
 
   // Save state after every answer
   saveState();
+
+   // Start playing music when the user submits their answer
+   audio.autoplay = true;
+   audio.addEventListener("ended", playNextSong);
+   playNextSong();
 
   getAnswers();
 };
