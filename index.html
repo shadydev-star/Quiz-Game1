@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Quiz Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Simple Quiz Game</h2>
+        <hr>
+        <div class="wrapper" id="box">
+            <h2 id="quiz"></h2>
+            <div class="row">
+                <input class="answers" id="option1" type="radio" value="a" name="radio">
+                <label for="option1"></label>
+            </div>
+            <div class="row">
+                <input class="answers" id="option2" type="radio" value="b" name="radio">
+                <label for="option2"></label>
+            </div>
+            <div class="row">
+                <input class="answers" id="option3" type="radio" value="c" name="radio">
+                <label for="option3"></label>
+            </div>
+            <div class="row">
+                <input class="answers" id="option4" type="radio" value="d" name="radio">
+                <label for="option4"></label>
+            </div>
+            <button onclick="submitQuiz()">Next</button>
+        </div>
+
+        <!-- Final Answer Grid Section -->
+        <div id="final-answer-grid" style="display: none;">
+            <h2>Final Answers</h2>
+            <div class="answer-grid">
+                <!-- Dynamically filled by JS -->
+            </div>
+            <button onclick="restartQuiz()">Restart</button>
+        </div>
+    </div>
+
+    <audio id="background-music" loop>
+        <source id="audio-source" src="freemp3.plus-MACKLEMORE -192.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="app.js"></script>
+</body>
+</html>
